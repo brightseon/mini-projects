@@ -1,0 +1,52 @@
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90vw;
+    height: 80vh;
+    display: flex;
+    gap: 15px;
+}
+
+.panel {
+    width: 100%;
+    flex: 1;
+    border-radius: 50px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    transition: flex 1s ease-in-out;
+    cursor: pointer;
+}
+
+.panel h3 {
+    margin-left: 20px;
+    overflow: hidden;
+    text-overflow: unset;
+    font-size: 24px;
+    color: white;
+    white-space: nowrap;
+}
+
+.panel:not(.active) h3 {
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 7;
+    transition: flex 1s ease-in-out;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 1s linear;
+}
