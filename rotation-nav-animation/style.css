@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #333;
+    color: #222;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ff7979;
+    position: relative;
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    font-size: 26px;
+    color: #ffffff;
+    transition: transform 1s;
+    z-index: 1;
+}
+
+.circle.show-nav {
+    transform: rotate(-90deg);
+}
+
+.circle .open,
+.circle .close {
+    all: unset;
+    position: absolute;
+    cursor: pointer;
+}
+
+.circle .open {
+    right: calc(100% / 4);
+    bottom: calc(100% / 5);
+}
+
+.circle .close {
+    left: calc(100% / 4.5);
+    bottom: calc(100% / 4);
+}
+
+.container {
+    width: 100vw;
+    padding: 100px 70px;
+    background-color: #ffffff;
+    transform-origin: top left;
+    transition: transform 1s;
+}
+
+.container.show-nav {
+    transform: rotateZ(-20deg);
+}
+
+.contents h1 {
+    margin: 0;
+}
+
+.contents small {
+    color: #555;
+    font-style: italic;
+}
+
+.contents p {
+    color: #333;
+    line-height: 1.5;
+}
+
+.contents img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+.menus {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    left: -20%;
+    bottom: -23%;
+    font-size: 16px;
+    color: #ffffff;
+    list-style: none;
+    transition: left 0.8s 0.6s;
+}
+
+.menus.show-nav {
+    left: 30px;
+}
+
+.menus a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menus li {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.menus li:nth-child(2) {
+    margin-left: 15px;
+}
+
+.menus li:nth-child(3) {
+    margin-left: 30px;
+}
